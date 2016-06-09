@@ -5,8 +5,12 @@ var express = require('express'),
 
 var app = express();
 
+app.set('view engine', 'jade');
+app.set('views', __dirname + '/templates');
+
 app.get('/', function(req, res){
-  res.send("<h1>I am IN love with Treehouse!</h1>");
+  //res.send("<h1>I am IN love with Treehouse!</h1>");
+  res.render('index.jade');
 });
 
 app.get('/blog/:title?', function(req, res){
